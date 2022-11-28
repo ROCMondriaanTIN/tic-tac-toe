@@ -25,8 +25,14 @@ tiles.forEach((elm) => {
 
 		toggle = !toggle;
 
-		// check complete rij met
-		checkForWin();
+		// check of een rij compleet is
+		if (!checkForWin()) {
+			elm.classList.add("blinker");
+		}
+	});
+
+	elm.addEventListener("animationend", (e) => {
+		elm.classList.remove("blinker");
 	});
 });
 
@@ -41,24 +47,28 @@ function checkForWin() {
 		/* We pakken eerst de juiste elementen
 		 * die een winnende rij vormen
 		 */
-		const x = tiles[row[0]].textContent;
-		const y = tiles[row[1]].textContent;
-		const z = tiles[row[2]].textContent;
+		const x = [tiles[row[0]], tiles[row[1]], tiles[row[2]]];
 
 		/**
 		 * We mogen lege tegeltjes niet vergelijken,
 		 * dus slaan we de rest over om de volgende
 		 * winnende rij te pakken
 		 */
-		if (x == "" || y == "" || z == "") continue;
+		if (x[0].textContent == "" || x[1].textContent == "" || x[2].textContent == "") continue;
 
 		/**
 		 * We vergelijken de 3 tegels of ze gelijk zijn
 		 * aan elkaar. Indien ja, dan hebben we een winnaar
 		 */
-		if (x === y && y === z) {
+		if (x[0].textContent === x[1].textContent && x[1].textContent === x[2].textContent) {
 			console.log("We have a winner!");
 			winner = true;
+
+			// animate elements
+			x.forEach((tile) => {
+				tile.classList.add("blinker");
+			});
+
 			break;
 		}
 		console.log("No winner yet.");
@@ -69,4 +79,6 @@ function checkForWin() {
 	} else {
 		console.log("Nope...");
 	}
+
+	return winner;
 }
