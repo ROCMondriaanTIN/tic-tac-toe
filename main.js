@@ -1,6 +1,7 @@
 console.log("Starting Tic Tac Toe...");
 
 const tiles = document.querySelectorAll(".tile");
+const restart = document.querySelector(".restart");
 let toggle = true;
 const winRows = [
 	[0, 1, 2],
@@ -82,3 +83,9 @@ function checkForWin() {
 
 	return winner;
 }
+
+restart.addEventListener("click", (e) => {
+	tiles.forEach((tile) => {
+		tile.textContent = "";
+	});
+});
