@@ -18,6 +18,15 @@
     margin: 4px;
     float: left;
 }
+.blinker {
+    animation: flash 0.25s;
+    animation-iteration-count: 3;
+}
+@keyframes flash {
+    50% {
+        border: 2px solid yellow;
+    }
+}
 
 .tile:hover {
     background-color: aquamarine;
