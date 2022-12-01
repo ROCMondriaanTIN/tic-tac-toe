@@ -1,5 +1,9 @@
 console.log("Starting Tic Tac Toe...");
 
+// audios
+const click = new Audio("audio/click_1.wav");
+const win = new Audio("audio/won.wav");
+
 const tiles = document.querySelectorAll(".tile");
 const restart = document.querySelector(".restart");
 let toggle = true;
@@ -14,8 +18,15 @@ const winRows = [
 	[2, 4, 6],
 ];
 
+const refresh = document.querySelector(".refresh");
+refresh.addEventListener("click", (e) => {
+	location.reload();
+});
+
 tiles.forEach((elm) => {
 	elm.addEventListener("click", (e) => {
+		click.play();
+
 		if (elm.textContent != "") return;
 
 		if (toggle) {
@@ -77,6 +88,7 @@ function checkForWin() {
 
 	if (winner) {
 		console.log("Yes we have a winner");
+		win.play();
 	} else {
 		console.log("Nope...");
 	}
