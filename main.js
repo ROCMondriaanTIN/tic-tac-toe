@@ -1,5 +1,6 @@
 console.log("Starting Tic Tac Toe...");
 
+import storageApi from "./storageApi.js";
 // audios
 const click = new Audio("audio/click_1.wav");
 const win = new Audio("audio/won.wav");
@@ -18,10 +19,8 @@ const winRows = [
 	[2, 4, 6],
 ];
 
-const refresh = document.querySelector(".refresh");
-refresh.addEventListener("click", (e) => {
-	location.reload();
-});
+console.log(storageApi.getPlayerX());
+console.log(storageApi.getPlayerO());
 
 tiles.forEach((elm) => {
 	elm.addEventListener("click", (e) => {

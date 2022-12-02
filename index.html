@@ -14,25 +14,38 @@
     <main>
         <div class="wrapper">
             <div class="container">
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
+                <div class="title-wrapper">
+                    <h1 class="title-game">WK 2022 BKE</h1>
+                </div>
+                <div class="tile-wrapper">
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                </div>
             </div>
-            <div class="controller">
+            <div class="bottom">
+                <div class="bottom-container">
+                    <h2>X</h2>
+                    <div class="bottom-score">0</div>
+                </div>
                 <button class="restart">RESTART</button>
-                <button class="refresh">REFRESH</button>
+                <div class="bottom-container">
+                    <h2>O</h2>
+                    <div class="bottom-score">0</div>
+                </div>
             </div>
         </div>
     </main>
 
 
-    <script src="main.js"></script>
+    <script src="main.js" type="module"></script>
+    <script src="storageApi.js" type="module"></script>
 </body>
 
 </html>
