@@ -31,7 +31,7 @@ tiles.forEach((elm) => {
 		click.play();
 
 		// if tile already has X or O do nothing
-		if (elm.textContent != "") return;
+		if (elm.textContent != "" || winner) return;
 
 		// fill in X or O
 		if (toggle) {
@@ -113,6 +113,8 @@ restart.addEventListener("click", (e) => {
 	tiles.forEach((tile) => {
 		tile.textContent = "";
 	});
+
+	winner = false;
 });
 
 function updateScore(element) {
