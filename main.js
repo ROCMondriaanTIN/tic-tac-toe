@@ -103,10 +103,7 @@ function checkForWin() {
 		console.log("Yes we have a winner");
 		// play the winning sound
 		win.play();
-	} else {
-		console.log("Nope...");
 	}
-
 	return winner;
 }
 
