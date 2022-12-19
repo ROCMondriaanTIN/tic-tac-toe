@@ -22,6 +22,8 @@ const winRows = [
 	[2, 4, 6],
 ];
 
+let winner = false;
+
 console.log(storageApi.getPlayerX());
 console.log(storageApi.getPlayerO());
 
